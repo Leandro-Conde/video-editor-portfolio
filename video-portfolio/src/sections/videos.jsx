@@ -1,68 +1,65 @@
 function Videos() {
+  const videos = [
+    {
+      id: 'BCMTUP97oKc',
+      title: 'Vídeo para YouTube',
+      category: 'Edição • YouTube',
+    },
+    {
+      id: 'c-klxxd7wV0',
+      title: 'Vídeo para YouTube',
+      category: 'Edição • YouTube',
+    },
+    {
+      id: 'a_AHASL4EiM',
+      title: 'Vídeo para YouTube',
+      category: 'Edição • YouTube',
+    },
+    {
+      id: 'q1Xh7zh2tv4',
+      title: 'Vídeo para YouTube',
+      category: 'Edição • YouTube',
+    },
+  ]
+
   return (
     <section id="videos" className="videos-section">
+
       <div className="section-title">
-        <span>01</span>
+        <span>02</span>
         <h2>Vídeos</h2>
       </div>
 
       <div className="videos-grid">
 
-        <div className="video-card">
-          <div className="video-placeholder">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/BCMTUP97oKc"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="origin"
-              allowFullScreen
-            ></iframe>
+        {videos.map((video, index) => (
+          <div className="video-card" key={video.id}>
+
+            <div className="video-placeholder">
+
+              <iframe
+                src={`https://www.youtube.com/embed/${video.id}`}
+                title={video.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="origin"
+                allowFullScreen
+              />
+
+            </div>
+
+            <div className="video-info">
+              <span>Projeto {String(index + 1).padStart(2, '0')}</span>
+
+              <h3>{video.title}</h3>
+
+              <p>{video.category}</p>
+            </div>
+
           </div>
-
-          <h3>Vídeo para YouTube</h3>
-          <p>Edição • YouTube</p>
-        </div>
-
-        <div className="video-card">
-          <div className="video-placeholder">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/c-klxxd7wV0"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="origin"
-              allowFullScreen
-            ></iframe>
-          </div>
-
-          <h3>Vídeo para YouTube</h3>
-          <p>Edição • YouTube</p>
-        </div>
-
-        <div className="video-card">
-          <div className="video-placeholder">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/a_AHASL4EiM"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="origin"
-              allowFullScreen
-            ></iframe>
-          </div>
-
-          <h3>Vídeo para YouTube</h3>
-          <p>Edição • YouTube</p>
-        </div>
+        ))}
 
       </div>
+
     </section>
   )
 }
