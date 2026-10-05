@@ -1,4 +1,4 @@
-import perfil from '../assets/images/perfil.jpg'
+import perfil from '../assets/images/perfil.png'
 
 function Hero() {
   return (
